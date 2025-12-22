@@ -6,18 +6,24 @@ export default function Balance() {
 
   return (
     <div className="min-h-screen bg-[#f6f7fb]">
-      {/* HEADER */}
-      <div className="sticky top-0 z-50 bg-[#f6f7fb]">
-        <div className="max-w-[430px] mx-auto px-4 h-14 flex items-center gap-3">
-          <button
-            onClick={() => navigate(-1)}
-            className="text-black active:scale-95"
-          >
-            <ArrowLeft size={22} />
-          </button>
-          <h1 className="text-lg font-semibold">Balance</h1>
-        </div>
-      </div>
+     <div className="h-14 px-4 flex items-center justify-between bg-gradient-to-b from-[#161a3a] to-[#1e2352] text-white">
+  <button
+    onClick={() => navigate(-1)}
+    className="text-2xl font-semibold"
+  >
+    &lt;
+  </button>
+
+  <h1 className="text-lg font-semibold">Balance</h1>
+
+  <button
+    onClick={() => navigate(-1)}
+    className="text-2xl"
+  >
+    ✕
+  </button>
+</div>
+
 
       {/* CONTENT */}
       <main className="max-w-[430px] mx-auto px-4 pb-10">

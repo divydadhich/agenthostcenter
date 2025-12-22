@@ -5,18 +5,24 @@ export default function MobileHeader({ title }) {
 
   return (
     <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b">
-      <div className="max-w-[430px] mx-auto px-4 h-14 flex items-center gap-3">
-        <button
-          onClick={() => navigate(-1)}
-          className="text-xl font-semibold active:scale-95"
-        >
-          ←
-        </button>
+      <div className="h-14 px-4 flex items-center justify-between bg-gradient-to-b from-[#161a3a] to-[#1e2352] text-white">
+  <button
+    onClick={() => navigate(-1)}
+    className="text-2xl font-semibold"
+  >
+    &lt;
+  </button>
 
-        <h1 className="text-base font-semibold truncate">
-          {title}
-        </h1>
-      </div>
+  <h1 className="text-lg font-semibold">Agent Reward</h1>
+
+  <button
+    onClick={() => navigate(-1)}
+    className="text-2xl"
+  >
+    ✕
+  </button>
+</div>
+
     </header>
   );
 }

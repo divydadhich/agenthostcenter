@@ -41,20 +41,23 @@ export default function MyWork() {
 
   return (
     <div className="min-h-screen bg-[#eef2fb]">
-      {/* HEADER */}
-      <div className="sticky top-0 z-50 bg-gradient-to-b from-[#1c1b3a] to-[#14142b]">
-        <div className="max-w-[430px] mx-auto px-4 h-14 flex items-center justify-between text-white">
-          <button onClick={() => navigate(-1)}>
-            <ArrowLeft size={22} />
-          </button>
+     <div className="h-14 px-4 flex items-center justify-between bg-gradient-to-b from-[#161a3a] to-[#1e2352] text-white">
+  <button
+    onClick={() => navigate(-1)}
+    className="text-2xl font-semibold"
+  >
+    &lt;
+  </button>
 
-          <h1 className="text-lg font-semibold">My Work</h1>
+  <h1 className="text-lg font-semibold">Work</h1>
 
-          <button>
-            <X size={22} />
-          </button>
-        </div>
-      </div>
+  <button
+    onClick={() => navigate(-1)}
+    className="text-2xl"
+  >
+    ✕
+  </button>
+</div>
 
       {/* CONTENT */}
       <main className="max-w-[430px] mx-auto px-4 py-4 space-y-4">

@@ -29,24 +29,24 @@ export default function HostReward() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#1c1835] via-[#2a1230] to-[#12060a] text-white">
-      {/* Header */}
-      <div className="sticky top-0 z-50 bg-gradient-to-b from-[#1c1835] to-[#14102a] border-b border-purple-900/50">
-        <div className="max-w-[430px] mx-auto px-4 h-14 flex items-center justify-between">
-          <button
-            onClick={() => navigate(-1)}
-            className="p-2 hover:bg-purple-900/30 rounded-lg transition-colors"
-          >
-            <ArrowLeft size={22} />
-          </button>
-          <h1 className="text-lg font-semibold">Host Reward</h1>
-          <button
-            onClick={() => navigate(-1)}
-            className="p-2 hover:bg-purple-900/30 rounded-lg transition-colors"
-          >
-            <X size={22} />
-          </button>
-        </div>
-      </div>
+     <div className="h-14 px-4 flex items-center justify-between bg-gradient-to-b from-[#161a3a] to-[#1e2352] text-white">
+  <button
+    onClick={() => navigate(-1)}
+    className="text-2xl font-semibold"
+  >
+    &lt;
+  </button>
+
+  <h1 className="text-lg font-semibold">Host Reward</h1>
+
+  <button
+    onClick={() => navigate(-1)}
+    className="text-2xl"
+  >
+    ✕
+  </button>
+</div>
+
 
       {/* Main Content */}
       <main className="max-w-[430px] mx-auto px-4 pb-20">

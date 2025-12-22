@@ -30,15 +30,24 @@ export default function Members() {
   return (
     <div className="min-h-screen bg-white">
 
-      {/* HEADER */}
-      <div className="sticky top-0 z-50 bg-gradient-to-r from-[#7a62b6] to-[#4b4b63]">
-        <div className="max-w-[430px] mx-auto px-4 h-14 flex items-center gap-3 text-white">
-          <button onClick={() => navigate(-1)}>
-            <ArrowLeft size={22} />
-          </button>
-          <h1 className="text-lg font-semibold">Members List</h1>
-        </div>
-      </div>
+<div className="h-14 px-4 flex items-center justify-between bg-gradient-to-b from-[#161a3a] to-[#1e2352] text-white">
+  <button
+    onClick={() => navigate(-1)}
+    className="text-2xl font-semibold"
+  >
+    &lt;
+  </button>
+
+  <h1 className="text-lg font-semibold">Members List</h1>
+
+  <button
+    onClick={() => navigate(-1)}
+    className="text-2xl"
+  >
+    ✕
+  </button>
+</div>
+
 
       {/* CONTENT */}
       <main className="max-w-[430px] mx-auto px-4 pt-4 pb-16 ">
