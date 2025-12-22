@@ -13,7 +13,7 @@ import {
 export default function Dashboard() {
   return (
     <div className="min-h-screen w-full bg-white">
-      {/* MOBILE WRAPPER */}
+      {/* RESPONSIVE CONTAINER */}
       <div className="mx-auto w-full max-w-[430px] px-4 py-4">
 
         {/* PROFILE CARD */}
@@ -44,7 +44,7 @@ export default function Dashboard() {
           </div>
 
           {/* Badge */}
-          <span className="px-3 py-1 bg-blue-600 text-white text-[10px] sm:text-xs rounded-full">
+          <span className="px-3 py-1 bg-blue-600 text-white text-[10px] sm:text-xs rounded-full whitespace-nowrap">
             AGENT
           </span>
         </div>
@@ -60,10 +60,10 @@ export default function Dashboard() {
           <MenuCard icon={<BarChart3 size={20} />} label="My Work" path="/work" bg="bg-blue-400" />
           <MenuCard icon={<PenTool size={20} />} label="Request" path="/request" bg="bg-green-400" />
           <MenuCard icon={<Users size={20} />} label="Team Bills" path="/team-bills" bg="bg-cyan-500" />
-          <MenuCard icon={<FileText size={20} />} label="Members List" path="/members" bg="bg-emerald-400 w-20" />
+          <MenuCard icon={<FileText size={20} />} label="Members List" path="/members" bg="bg-emerald-400" />
           <MenuCard icon={<Mail size={20} />} label="Invite" path="/invite" bg="bg-pink-400" />
-          <MenuCard icon={<Gift size={20} />} label="Host Reward" path="/host-reward" bg="bg-yellow-400 w-20" />
-          <MenuCard icon={<Trophy size={20} />} label="Agent Reward" path="/agent-reward" bg="bg-purple-500 w-20" />
+          <MenuCard icon={<Gift size={20} />} label="Host Reward" path="/host-reward" bg="bg-yellow-400" />
+          <MenuCard icon={<Trophy size={20} />} label="Agent Reward" path="/agent-reward" bg="bg-purple-500" />
         </div>
 
       </div>

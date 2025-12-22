@@ -6,14 +6,45 @@ export default function MenuCard({ icon, label, path, bg }) {
   return (
     <button
       onClick={() => navigate(path)}
-      className="flex items-center gap-4 p-5 rounded-2xl bg-white/70 backdrop-blur border border-white shadow-md active:scale-95 transition"
+      className="
+        w-full
+        bg-white
+        rounded-2xl
+        p-3
+        sm:p-4
+        shadow
+        flex
+        items-center
+        gap-3
+        active:scale-95
+        transition
+      "
     >
+      {/* Icon */}
       <div
-        className={`w-14 h-14 rounded-2xl flex items-center justify-center text-white text-2xl ${bg}`}
+        className={`
+          ${bg}
+          w-10 h-10
+          sm:w-12 sm:h-12
+          rounded-xl
+          flex
+          items-center
+          justify-center
+          text-white
+          shrink-0
+        `}
       >
         {icon}
       </div>
-      <span className="text-lg font-semibold text-gray-800">
+
+      {/* Label */}
+      <span className="
+        text-xs
+        sm:text-sm
+        font-semibold
+        text-gray-800
+        truncate
+      ">
         {label}
       </span>
     </button>
