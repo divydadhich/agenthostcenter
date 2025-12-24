@@ -27,7 +27,7 @@ export default function Dashboard() {
             &lt;
           </button>
 
-          <h1 className="text-lg font-semibold">Agent</h1>
+          <h1 className="text-lg font-semibold">Agency</h1>
 
           <button
             onClick={() => navigate(-1)}
