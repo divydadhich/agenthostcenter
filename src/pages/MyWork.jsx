@@ -111,15 +111,20 @@ export default function MyWork() {
       </div>
 
       {/* ACTION */}
-      <button
-        onClick={() => {
-          setSelectedWork(item);
-          setOpen(true);
-        }}
-        className="mt-4 text-sm font-medium text-blue-600"
-      >
-        View details →
-      </button>
+     <button
+  onClick={() => setOpenSheet(true)}
+  className="
+    mt-4
+    block
+    mx-auto
+    text-sm
+    font-medium
+    text-purple-600
+    active:scale-95
+  "
+>
+  View details →
+</button>
     </div>
   ))}
 </main>
