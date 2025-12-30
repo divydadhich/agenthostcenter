@@ -66,9 +66,18 @@ export default function MyWork() {
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
   const [selectedWork, setSelectedWork] = useState(null);
+  const Row = ({ label, value }) => {
+  return (
+    <div className="flex justify-between">
+      <span className="text-gray-500">{label}</span>
+      <span className="font-medium text-gray-900">{value}</span>
+    </div>
+  );
+};
+
 
   return (
-    <div className="min-h-screen bg-[#eef2fb]">
+    <div className="min-h-screen bg-white">
       {/* HEADER */}
       <div className="h-14 px-4 flex items-center justify-between bg-[#1e2352] text-white">
         <button onClick={() => navigate(-1)}>&lt;</button>
@@ -77,34 +86,44 @@ export default function MyWork() {
       </div>
 
       <main className="max-w-[430px] mx-auto px-4 py-4 space-y-4">
-        {workData.map((item, i) => (
-          <div key={i} className="bg-white rounded-2xl p-4 shadow">
-            <div className="flex justify-between mb-3">
-              <p className="text-blue-600 font-semibold">{item.month}</p>
-              <span className="bg-emerald-500 text-white px-3 py-1 rounded-full text-sm">
-                Settled
-              </span>
-            </div>
+  {workData.map((item, i) => (
+    <div
+      key={i}
+      className="relative bg-white border border-gray-200 rounded-xl p-4"
+    >
+      {/* LEFT ACCENT */}
+      <div className="absolute left-0 top-0 h-full w-1 rounded-l-xl bg-blue-500" />
 
-            <div className="grid grid-cols-2 gap-y-2 text-sm">
-              <p>Target: <span className="font-semibold">{item.target}</span></p>
-              <p className="text-right">Duration: <span className="font-semibold">{item.duration}</span></p>
-              <p>Target LV: <span className="font-semibold">{item.level}</span></p>
-              <p className="text-right">Salary: <span className="font-semibold">{item.salary}</span></p>
-            </div>
+      {/* TOP */}
+      <div className="flex items-center justify-between mb-4">
+        <p className="font-semibold text-gray-900">{item.month}</p>
+        <span className="text-xs px-3 py-1 rounded-full bg-green-100 text-green-600">
+          Settled
+        </span>
+      </div>
 
-            <button
-              onClick={() => {
-                setSelectedWork(item);
-                setOpen(true);
-              }}
-              className="mt-3 w-full text-blue-500 text-sm font-medium"
-            >
-              See more details &gt;&gt;
-            </button>
-          </div>
-        ))}
-      </main>
+      {/* DETAILS */}
+      <div className="space-y-2 text-sm text-gray-700">
+        <Row label="Target" value={item.target} />
+        <Row label="Duration" value={item.duration} />
+        <Row label="Target Level" value={item.level} />
+        <Row label="Salary" value={item.salary} />
+      </div>
+
+      {/* ACTION */}
+      <button
+        onClick={() => {
+          setSelectedWork(item);
+          setOpen(true);
+        }}
+        className="mt-4 text-sm font-medium text-blue-600"
+      >
+        View details →
+      </button>
+    </div>
+  ))}
+</main>
+
 
       <BottomSheet open={open} onClose={() => setOpen(false)}>
         <WorkDetails data={selectedWork} />

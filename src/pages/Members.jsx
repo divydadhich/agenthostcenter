@@ -21,6 +21,96 @@ const membersData = [
     role: "Agent",
     roleColor: "bg-orange-400",
   },
+   {
+    name: "trk",
+    id: "12610181",
+    time: "0s",
+    coins: "0",
+    month: "2025-12",
+    role: "Agent",
+    roleColor: "bg-red-400",
+  },
+  {
+    name: "Rocky",
+    id: "982102",
+    time: "20s",
+    coins: "15",
+    month: "2025-11",
+    role: "Agent",
+    roleColor: "bg-orange-400",
+  },
+   {
+    name: "trk",
+    id: "12610181",
+    time: "0s",
+    coins: "0",
+    month: "2025-12",
+    role: "Agent",
+    roleColor: "bg-red-400",
+  },
+  {
+    name: "Rocky",
+    id: "982102",
+    time: "20s",
+    coins: "15",
+    month: "2025-11",
+    role: "Agent",
+    roleColor: "bg-orange-400",
+  },
+   {
+    name: "trk",
+    id: "12610181",
+    time: "0s",
+    coins: "0",
+    month: "2025-12",
+    role: "Agent",
+    roleColor: "bg-red-400",
+  },
+  {
+    name: "Rocky",
+    id: "982102",
+    time: "20s",
+    coins: "15",
+    month: "2025-11",
+    role: "Agent",
+    roleColor: "bg-orange-400",
+  },
+   {
+    name: "trk",
+    id: "12610181",
+    time: "0s",
+    coins: "0",
+    month: "2025-12",
+    role: "Agent",
+    roleColor: "bg-red-400",
+  },
+  {
+    name: "Rocky",
+    id: "982102",
+    time: "20s",
+    coins: "15",
+    month: "2025-11",
+    role: "Agent",
+    roleColor: "bg-orange-400",
+  },
+   {
+    name: "trk",
+    id: "12610181",
+    time: "0s",
+    coins: "0",
+    month: "2025-12",
+    role: "Agent",
+    roleColor: "bg-red-400",
+  },
+  {
+    name: "Rocky",
+    id: "982102",
+    time: "20s",
+    coins: "15",
+    month: "2025-11",
+    role: "Agent",
+    roleColor: "bg-orange-400",
+  },
 ];
 
 export default function Members() {
@@ -49,66 +139,70 @@ export default function Members() {
 </div>
 
 
-      {/* CONTENT */}
-      <main className="max-w-[430px] mx-auto px-4 pt-4 pb-16 ">
+     {/* CONTENT */}
+      <main className="max-w-[430px] mx-auto px-4 py-4 pb-20">
 
         {/* SEARCH */}
-        <div className="relative mb-4 shadow-md rounded-2xl">
+        <div className="relative mb-5">
           <Search
             size={18}
-            className="absolute  left-4 top-1/2 -translate-y-1/2 text-gray-400"
+            className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"
           />
           <input
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            placeholder="Please enter an account"
-            className="w-full h-12 rounded-full pl-12 pr-4 text-sm outline-none"
+            placeholder="Search member"
+            className="
+              w-full h-12
+              rounded-xl
+              border border-gray-300
+              pl-12 pr-4
+              text-sm
+              outline-none
+              focus:ring-2 focus:ring-purple-500
+            "
           />
         </div>
 
         {/* MEMBERS LIST */}
-        <div className="space-y-4">
+        <div className="space-y-3">
           {membersData.map((m, i) => (
             <div
               key={i}
-              className="bg-white rounded-2xl p-4 shadow-md flex gap-4"
+              className="relative bg-white border border-gray-200 rounded-xl p-4 flex gap-4"
             >
+              {/* LEFT COLOR STRIP */}
+              <div
+                className={`absolute left-0 top-0 h-full w-1 rounded-l-xl ${m.roleColor}`}
+              />
+
               {/* AVATAR */}
-              <div className="w-14 h-14 rounded-full bg-purple-200 flex-shrink-0" />
+              <div className="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center font-semibold text-purple-600">
+                {m.name.charAt(0).toUpperCase()}
+              </div>
 
               {/* INFO */}
               <div className="flex-1">
                 <div className="flex justify-between items-start">
                   <div>
-                    <p className="font-semibold text-gray-900">
-                      {m.name}
-                    </p>
-                    <p className="text-sm text-gray-500">
+                    <p className="font-medium">{m.name}</p>
+                    <p className="text-xs text-gray-500">
                       ID: {m.id}
                     </p>
                   </div>
 
-                  <span
-                    className={`px-3 py-1 text-xs text-white rounded-full ${m.roleColor}`}
-                  >
+                  <span className="text-xs px-3 py-1 rounded-full bg-gray-100 text-gray-700">
                     {m.role}
                   </span>
                 </div>
 
                 {/* STATS */}
-                <div className="flex items-center justify-between mt-3">
-                  <div className="flex gap-2">
-                    <span className="flex items-center gap-1 px-3 py-1 rounded-full bg-purple-100 text-purple-600 text-xs font-semibold">
-                      ⏱ {m.time}
-                    </span>
-                    <span className="flex items-center gap-1 px-3 py-1 rounded-full bg-yellow-100 text-yellow-600 text-xs font-semibold">
-                      💰 {m.coins}
-                    </span>
+                <div className="flex justify-between items-center mt-3 text-xs text-gray-600">
+                  <div className="flex gap-4">
+                    <span>⏱ {m.time}</span>
+                    <span>💰 {m.coins}</span>
                   </div>
-
-                  <span className="text-sm text-gray-400">
-                    {m.month}
-                  </span>
+                  <span>{m.month}</span>
                 </div>
               </div>
             </div>
@@ -116,7 +210,7 @@ export default function Members() {
         </div>
 
         {/* LOAD MORE */}
-        <button className="w-full mt-10 text-blue-400 text-sm font-semibold">
+        <button className="w-full mt-10 text-sm font-medium text-purple-600">
           Load more
         </button>
       </main>

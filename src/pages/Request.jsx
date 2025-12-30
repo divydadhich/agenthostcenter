@@ -48,7 +48,7 @@ export default function RequestsList() {
             key={item.id}
             className="
               bg-white
-              border
+              shadow-md
               rounded-xl
               p-3
               flex
