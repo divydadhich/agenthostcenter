@@ -7,7 +7,7 @@ export default function Invite() {
   const [hostId, setHostId] = useState("");
 
   return (
-    <div className="min-h-screen bg-[#eaf0ff]">
+    <div className="min-h-screen bg-white">
       <div className="h-14 px-4 flex items-center justify-between bg-gradient-to-b from-[#161a3a] to-[#1e2352] text-white">
   <button
     onClick={() => navigate(-1)}
@@ -46,7 +46,7 @@ export default function Invite() {
         </div> */}
 
         {/* HOST CENTER CARD */}
-        <div className="mt-6 bg-white rounded-2xl p-4 shadow">
+        <div className="mt-6 bg-white rounded-2xl p-4 shadow-md">
           <p className="font-semibold mb-2 text-gray-800">
             Host account:
           </p>
@@ -67,7 +67,7 @@ export default function Invite() {
 
         {/* APPLY BUTTON */}
         <button
-          className="mt-10 w-full h-14 rounded-full bg-gradient-to-r from-[#6f2cff] to-[#8a4bff] text-white text-lg font-semibold shadow-lg active:scale-95"
+          className="mt-10 w-full h-14 rounded-full bg-gradient-to-r from-[#6f2cff] to-[#8a4bff] text-white text-lg font-semibold shadow-md active:scale-95"
         >
           Apply
         </button>
